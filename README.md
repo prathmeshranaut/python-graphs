@@ -1,2 +1,3 @@
-# python-graphs
+# Python Graph Algorithms
+
 Graphs algorithm implementation in Python
