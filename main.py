@@ -1,7 +1,20 @@
+from dfs import depth_first_search
+
 def print_hi(name):
     print(f'Hi, {name}')
 
 
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    graph = {
+        "A": ["B", "C", "D"],
+        "B": ["A", "D", "E"],
+        "C": ["A", "F"],
+        "D": ["B", "D"],
+        "E": ["B", "F"],
+        "F": ["C", "E", "G"],
+        "G": ["F"],
+    }
+
+    print(depth_first_search(graph, "A", "G"))
+
 
