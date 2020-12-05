@@ -1,9 +1,6 @@
 from dfs import depth_first_search, depth_first_search_recursive
 from bfs import breadth_first_search
-
-def print_hi(name):
-    print(f'Hi, {name}')
-
+from top_sort import topological_sort
 
 if __name__ == '__main__':
     graph = {
@@ -16,8 +13,25 @@ if __name__ == '__main__':
         "G": ["F"],
     }
 
-    print(depth_first_search(graph, "A", "G"))
-    #print(depth_first_search_recursive(graph, "A", "G", set()))
+    # print(depth_first_search(graph, "A", "G"))
+    # print(depth_first_search_recursive(graph, "A", "G", set()))
 
-    print(breadth_first_search(graph, "A", "G"))
+    # print(breadth_first_search(graph, "A", "G"))
 
+    graph = {
+        "A": ["D"],
+        "B": ["D"],
+        "C": ["A", "B"],
+        "D": ["G", "H"],
+        "E": ["A", "D", "F"],
+        "F": ["K", "J"],
+        "G": ["I"],
+        "H": ["I", "J"],
+        "I": ["L"],
+        "J": ["M", "L"],
+        "K": ["J"],
+        "L": [],
+        "M": [],
+    }
+
+    print(topological_sort(graph))
