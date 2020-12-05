@@ -7,13 +7,15 @@ def depth_first_search(graph: dict, start: str, search: str) -> bool:
         if current_node == search:
             return True
 
-        if current_node not in visited and len(graph[current_node]) > 0:
-            list = graph[current_node][::-1]
-            for element in list:
-                if element not in visited:
-                    stack.append(element)
+        if current_node in visited:
+            return False
 
         visited.add(current_node)
+
+        for element in graph[current_node]:
+            if element not in visited:
+                stack.append(element)
+
         print(stack)
 
     return False

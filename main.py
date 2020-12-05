@@ -1,4 +1,5 @@
 from dfs import depth_first_search, depth_first_search_recursive
+from bfs import breadth_first_search
 
 def print_hi(name):
     print(f'Hi, {name}')
@@ -15,7 +16,8 @@ if __name__ == '__main__':
         "G": ["F"],
     }
 
-    #print(depth_first_search(graph, "A", "G"))
-    print(depth_first_search_recursive(graph, "A", "G", set()))
+    print(depth_first_search(graph, "A", "G"))
+    #print(depth_first_search_recursive(graph, "A", "G", set()))
 
+    print(breadth_first_search(graph, "A", "G"))
 
