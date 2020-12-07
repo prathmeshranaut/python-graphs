@@ -39,6 +39,18 @@ if __name__ == '__main__':
     # print(topological_sort(graph))  # ['E', 'F', 'K', 'C', 'B', 'A', 'D', 'H', 'J', 'M', 'G', 'I', 'L']
 
     graph = {
+        "A": [("B", 5), ("C", 1)],
+        "B": [("C", 2), ("D", 3), ("E", 20)],
+        "C": [("B", 3), ("E", 12)],
+        "D": [("C", 3), ("E", 2), ("F", 6)],
+        "E": [("F", 1)],
+        "F": [],
+    }
+
+    print(find_shortest_path(graph, "A", "F"))
+
+
+    graph = {
         "A": [("B", 5)],
         "B": [("C", 20), ("G", 60), ("F", 30)],
         "C": [("D", 10), ("E", 75)],
@@ -50,7 +62,5 @@ if __name__ == '__main__':
         "I": [],
         "J": []
     }
-
-    print(find_shortest_path(graph, "A", "F"))
 
     print(bellman_ford_distance(graph, "A"))
