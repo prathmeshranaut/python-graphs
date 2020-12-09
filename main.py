@@ -3,6 +3,7 @@ from bfs import breadth_first_search
 from top_sort import topological_sort
 from dijkstra import find_shortest_path
 from bellman_ford import bellman_ford_distance
+from tarjans_strongly_connected import find_strongly_connected_components
 
 if __name__ == '__main__':
     graph = {
@@ -49,7 +50,6 @@ if __name__ == '__main__':
 
     print(find_shortest_path(graph, "A", "F"))
 
-
     graph = {
         "A": [("B", 5)],
         "B": [("C", 20), ("G", 60), ("F", 30)],
@@ -64,3 +64,7 @@ if __name__ == '__main__':
     }
 
     print(bellman_ford_distance(graph, "A"))
+
+
+
+    print(find_strongly_connected_components(graph, "A"))
