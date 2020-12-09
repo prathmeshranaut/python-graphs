@@ -37,7 +37,7 @@ def dfs(graph: dict, at: str):
         if on_stack[node]:
             low_link_value[at] = min(low_link_value[at], low_link_value[node])
 
-    if (ids[at] == low_link_value[at]):
+    if ids[at] == low_link_value[at]:
         node = stack.pop()
         while node:
             on_stack[node] = False
