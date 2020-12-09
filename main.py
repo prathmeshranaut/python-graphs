@@ -48,7 +48,7 @@ if __name__ == '__main__':
         "F": [],
     }
 
-    print(find_shortest_path(graph, "A", "F"))
+    # print(find_shortest_path(graph, "A", "F"))
 
     graph = {
         "A": [("B", 5)],
@@ -63,8 +63,25 @@ if __name__ == '__main__':
         "J": []
     }
 
-    print(bellman_ford_distance(graph, "A"))
+    # print(bellman_ford_distance(graph, "A"))
 
+    graph = {
+        "A": ["B"],
+        "B": ["C"],
+        "C": ["A"],
+        "D": ["E", "H"],
+        "E": ["F"],
+        "F": ["G", "A"],
+        "G": ["E", "A", "C"],
+        "H": ["D", "F"],
+    }
 
+    connected_components = find_strongly_connected_components(graph)
+    ssc = {}
+    for node, component in connected_components.items():
+        if component not in ssc:
+            ssc[component] = []
 
-    print(find_strongly_connected_components(graph, "A"))
+        ssc[component].append(node)
+
+    print("Strongly Connected Components: ", ssc)
