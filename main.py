@@ -6,6 +6,7 @@ from bellman_ford import bellman_ford_distance
 from tarjans_strongly_connected import find_strongly_connected_components
 
 if __name__ == '__main__':
+
     graph = {
         "A": ["B", "C", "D"],
         "B": ["A", "D", "E"],
@@ -16,10 +17,14 @@ if __name__ == '__main__':
         "G": ["F"],
     }
 
-    # print(depth_first_search(graph, "A", "G"))
-    # print(depth_first_search_recursive(graph, "A", "G", set()))
+    # Perform Depth-First Search using stacks
+    print("DFS: ", depth_first_search(graph, "A", "G"))
 
-    # print(breadth_first_search(graph, "A", "G"))
+    # Perform Depth-First Search using recursive function
+    print("DFS(Recursive):", depth_first_search_recursive(graph, "A", "G", set()))
+
+    # Perform Breadth-First Search to find a path between A to G
+    print("BFS:", breadth_first_search(graph, "A", "G"))
 
     graph = {
         "A": ["D"],
@@ -37,7 +42,9 @@ if __name__ == '__main__':
         "M": [],
     }
 
-    # print(topological_sort(graph))  # ['E', 'F', 'K', 'C', 'B', 'A', 'D', 'H', 'J', 'M', 'G', 'I', 'L']
+    # Finds the Topological order of nodes in the graph
+    print("Topological Order:", topological_sort(graph))
+    # Expected Output = ['E', 'F', 'K', 'C', 'B', 'A', 'D', 'H', 'J', 'M', 'G', 'I', 'L']
 
     graph = {
         "A": [("B", 5), ("C", 1)],
@@ -48,7 +55,8 @@ if __name__ == '__main__':
         "F": [],
     }
 
-    # print(find_shortest_path(graph, "A", "F"))
+    # Use Djikstra to find shortest path between two nodes in a graph with no negative weights
+    print("Shortest Path from A to F:", find_shortest_path(graph, "A", "F"))
 
     graph = {
         "A": [("B", 5)],
@@ -63,7 +71,8 @@ if __name__ == '__main__':
         "J": []
     }
 
-    # print(bellman_ford_distance(graph, "A"))
+    # Finds the distance to all nodes from a single source in a graph with negative weights
+    print("Distance from A to every node in graph:", bellman_ford_distance(graph, "A"))
 
     graph = {
         "A": ["B"],
@@ -76,6 +85,7 @@ if __name__ == '__main__':
         "H": ["D", "F"],
     }
 
+    # Finds the strongly connected components in the graph
     connected_components = find_strongly_connected_components(graph)
     ssc = {}
     for node, component in connected_components.items():

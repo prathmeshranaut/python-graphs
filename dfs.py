@@ -1,3 +1,7 @@
+# Performs depth first search to find if a path exists from a staring node to
+# a destination node in a graph.
+# Returns True, if a path exists
+# Returns False if a path does not exist
 def depth_first_search(graph: dict, start: str, search: str) -> bool:
     stack = [start]
     visited = set()
@@ -15,8 +19,6 @@ def depth_first_search(graph: dict, start: str, search: str) -> bool:
         for element in graph[current_node]:
             if element not in visited:
                 stack.append(element)
-
-        print(stack)
 
     return False
 

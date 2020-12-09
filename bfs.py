@@ -14,6 +14,5 @@ def breadth_first_search(graph: dict, start: str, search: str) -> bool:
                     queue.append(element)
 
         visited.add(current_node)
-        print(queue)
 
     return False
