@@ -1,3 +1,5 @@
+# Topological sort returns the ordering of nodes in a graph
+# This helps in creating a Directed Acyclic Graph
 def topological_sort(graph: dict) -> list:
     v = {x: False for x in graph}
     order = [0] * len(v)

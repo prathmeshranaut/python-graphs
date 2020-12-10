@@ -1,3 +1,7 @@
+# Does a breadth first search to find if a path exists from a starting node
+# to another node
+# Returns True if path exists
+# Returns False if no path exists
 def breadth_first_search(graph: dict, start: str, search: str) -> bool:
     queue = [start]
     visited = set()

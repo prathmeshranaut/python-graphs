@@ -1,3 +1,5 @@
+# Bellman Ford Algorithm finds distance between a node and
+# other nodes in a graph with negative weights
 def bellman_ford_distance(graph: dict, start: str):
     dist = {x: 99999 for x in graph}
     dist[start] = 0

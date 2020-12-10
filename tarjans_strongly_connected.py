@@ -6,6 +6,8 @@ id = 0
 ssc_count = 0
 
 
+# Finds strongly connected components in a graph and returns a list of low link values.
+# Same low link values indicate that the nodes are a part of same strongly connected components
 def find_strongly_connected_components(graph: dict):
     global ids, low_link_value, on_stack, stack, id, ssc_count
     ids = {x: False for x in graph}
@@ -23,6 +25,8 @@ def find_strongly_connected_components(graph: dict):
     return low_link_value
 
 
+# Traverses over the node and in DFS manner and assigns a common low link value
+# as soon a cycle is formed
 def dfs(graph: dict, at: str):
     global ids, low_link_value, on_stack, stack, id, ssc_count
     stack.append(at)

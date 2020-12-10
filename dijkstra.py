@@ -2,6 +2,7 @@ import sys
 import heapq
 
 
+# Dijkstra Algorithm to find the shortest path between two nodes in a graph with no negative weights
 def dijkstra(graph: dict, start: str):
     distance = {x: 99999 for x in graph}
     prev = {x: "" for x in graph}
@@ -34,6 +35,7 @@ def dijkstra(graph: dict, start: str):
     return (distance, prev)
 
 
+# Finds shortest path between two nodes where no negative weights exists
 def find_shortest_path(graph: dict, start: str, end: str):
     dist, prev = dijkstra(graph, start)
     path = []

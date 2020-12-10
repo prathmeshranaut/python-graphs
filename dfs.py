@@ -23,6 +23,7 @@ def depth_first_search(graph: dict, start: str, search: str) -> bool:
     return False
 
 
+# Recursive approach to find if an element exists in the graph using DFS
 def depth_first_search_recursive(graph: dict, start: str, search: str, visited: set) -> bool:
     if start in visited:
         return False
