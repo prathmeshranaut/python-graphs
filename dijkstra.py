@@ -32,7 +32,7 @@ def dijkstra(graph: dict, start: str):
                 distance[node_key] = cost + node_cost
                 heapq.heappush(priority_queue, (cost + node_cost, node_key))
 
-    return (distance, prev)
+    return distance, prev
 
 
 # Finds shortest path between two nodes where no negative weights exists
